@@ -1,0 +1,123 @@
+:root {
+  --fontDeca: "Lexend Deca", sans-serif;
+  --fontBigShoulder: "Big Shoulders Display", cursive;
+  --background: #f2f2f2;
+  --sedanBackground: rgba(226, 134, 37, 1);
+  --suvBackground: rgba(0, 105, 113, 1);
+  --luxuryBackground: rgba(0, 65, 64, 1);
+  --header: rgba(242, 242, 242, 1);
+  --text: rgba(255, 255, 255, 1);
+  --radius: 0.8rem;
+  --border: #eeeeee;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  display: grid;
+  place-items: center;
+}
+
+.parent {
+  height: fit-content;
+  padding: 10em 0;
+  display: grid;
+  width: 92rem;
+  place-items: center;
+  grid-template: 1fr / repeat(3, 1fr);
+}
+
+.sedan,
+.suv,
+.luxury {
+  padding: 4.8rem;
+}
+
+.sedan {
+  background: var(--sedanBackground);
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.suv {
+  background: var(--suvBackground);
+}
+
+.luxury {
+  background: var(--luxuryBackground);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.header {
+  color: var(--header);
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: var(--fontBigShoulder);
+  text-transform: uppercase;
+  margin-top: 3.5rem;
+}
+
+.text {
+  margin-top: 2.5rem;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-family: var(--fontDeca);
+}
+
+.btn {
+  margin-top: 8rem;
+  font-family: var(--fontDeca);
+  background: var(--background);
+  display: inline-block;
+  height: 4.8rem;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 2.5rem;
+}
+
+.sedan .btn {
+  color: var(--sedanBackground);
+}
+
+.suv .btn {
+  color: var(--suvBackground);
+}
+
+.luxury .btn {
+  color: var(--luxuryBackground);
+}
+
+.btn:hover {
+  background: transparent;
+  border: 2px solid var(--text);
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .parent {
+    display: grid;
+    width: 32rem;
+    grid-template: none;
+  }
+
+  .sedan {
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .luxury {
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+}
